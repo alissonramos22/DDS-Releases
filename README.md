@@ -1,43 +1,41 @@
 # DDS (Dynamic Display System) - Downloads Oficiais
 
-Bem-vindo ao repositório de distribuição oficial do ecossistema DDS. Aqui você encontra os instaladores para as duas principais soluções do projeto.
+Bem-vindo ao repositório de distribuição oficial do ecossistema **DDS (Dynamic Display System)**. Aqui você encontra os instaladores e pacotes de distribuição para as soluções do projeto.
 
-Todos os arquivos estão disponíveis para download na aba **[Releases](../../releases)** deste repositório.
-
----
-
-## 1. DDS Server (Solução Central)
-*Arquivo: `DDS_Setup_v1.1.zip`*
-
-O **DDS Server** é o coração do sistema, projetado para rodar no computador principal ou servidor da rede. Ele engloba:
-
-*   **Backend & API:** Gerencia toda a lógica, banco de dados (SQLite) e comunicação.
-*   **Web Admin (Client-Admin):** Painel de controle para gerenciar telas, playlists, agendamentos e mídias via navegador (`localhost:3000`).
-*   **Web Display (Client-Display):** Player web que roda nos navegadores das SmartTVs ou equipamentos conectados.
-
-**Ideal para:** O servidor central que comandará toda a operação de Digital Signage.
+Todos os arquivos compilados e instaladores estão disponíveis para download na aba **[Releases](../../releases)** deste repositório.
 
 ---
 
-## 2. DDS Client Manager (App de Gerenciamento Remoto)
-*Arquivo: `DDS_Client_Manager_Setup.exe` (ou nome similar na release)*
+## 📦 1. DDS Server (Solução Central - v1.3.6)
+*Arquivo: `DDS_Setup_v1.3.6.exe` (ou `DDS_Setup.exe`)*
 
-O **DDS Client Manager** (anteriormente *client-url-loader*) é uma ferramenta desktop independente para operadores e clientes.
+O **DDS Server** é o núcleo do sistema, projetado para execução no servidor local ou computador principal da rede corporativa/industrial. Ele integra:
 
-*   **Objetivo:** Facilitar configurações remotas e acesso rápido sem depender apenas do navegador.
-*   **Funcionalidades:**
-    *   Carregamento de URLs de displays.
-    *   Ferramentas utilitárias para o dia a dia da operação.
-    *   Interface nativa Windows.
+*   **Backend & API de Alta Performance:** API REST FastAPI compilada em binário seguro nativo (Cython), banco de dados local SQLite com migrações automáticas e WebSockets de baixa latência.
+*   **Web Admin (`client-admin`):** Painel de controle responsivo para gestão de dispositivos, grupos, playlists, ciclos, agendamentos, modelos especiais e envio de dados em tempo real.
+*   **Web Display (`client-display`):** Player inteligente SDUI (Server-Driven UI) com suporte a reprodução contínua, transição de slides, cache local IndexedDB e áudio neural.
+*   **Motor Neural TTS (Edge-TTS):** Síntese de voz com qualidade humana em português com cache em disco para chamadas e alertas instantâneos.
 
-**Ideal para:** Operadores que precisam de acesso rápido ou configurações específicas nas pontas (clientes).
+**Ideal para:** Servidor central que orquestra toda a operação de Digital Signage, painéis industriais Andon e dashboards de produtividade.
 
 ---
 
-### 📥 Como Instalar
+## 🖥️ 2. DDS Client Manager (Gestor Remoto Desktop)
+*Arquivo: `DDS_Client_Manager_Setup.exe`*
 
-1.  Clique em **Releases** no menu lateral direito (ou no topo).
-2.  Escolha a versão mais recente (ex: `v1.1`).
-3.  Na seção "Assets", clique no arquivo desejado (`.zip` ou `.exe`) para baixar.
+Ferramenta desktop nativa para operadores e administradores de TI:
+*   Carregamento rápido e pareamento de URLs de displays.
+*   Gerenciamento de licenças e utilitários de rede.
+*   Interface Windows simplificada.
 
-> **Nota:** Se o Windows ou Antivírus alertar sobre "arquivo desconhecido", isso ocorre porque o instalador é novo e ainda não possui reputação global. É seguro prosseguir clicando em "Mais informações" > "Executar assim mesmo".
+---
+
+## 📥 Como Instalar e Atualizar
+
+1. Acesse a aba **[Releases](../../releases)** no GitHub.
+2. Localize a versão mais recente (**`v1.3.6`**).
+3. Na seção **Assets**, baixe o instalador `DDS_Setup_v1.3.6.exe` (ou `DDS_Setup.exe`).
+4. Execute o instalador como Administrador e siga os passos na tela.
+5. Acesse o painel de gerenciamento via navegador em `http://localhost:3000` (ou IP da máquina na rede).
+
+> **Nota:** Se o Windows SmartScreen exibir aviso de "aplicativo não reconhecido", clique em **"Mais informações"** e depois em **"Executar assim mesmo"**.
